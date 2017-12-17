@@ -1,11 +1,11 @@
 /** 
 * padding
-* w’è‚³‚ê‚½’·‚³‚Ü‚Åw’è‚Ì•¶š‚Å•âŠ®‚µ‚½•Ô‹p‚·‚é
-* •¶š‚ªw’è‚³‚ê‚È‚¢ê‡A0‚ğ–„‚ß‚Ä•Ô‚·
-* @param {string} str Œ³‚Ì•¶š—ñ
-* @param {number} num –Ú“I‚Ì•¶š—ñ’·
-* @param {string} pad •âŠ®‚·‚é•¶š—ñ
-* @return {string} •âŠ®Œã‚Ì•¶š—ñ
+* æŒ‡å®šã•ã‚ŒãŸé•·ã•ã¾ã§æŒ‡å®šã®æ–‡å­—ã§è£œå®Œã—ãŸè¿”å´ã™ã‚‹
+* æ–‡å­—ãŒæŒ‡å®šã•ã‚Œãªã„å ´åˆã€0ã‚’åŸ‹ã‚ã¦è¿”ã™
+* @param {string} str å…ƒã®æ–‡å­—åˆ—
+* @param {number} num ç›®çš„ã®æ–‡å­—åˆ—é•·
+* @param {string} pad è£œå®Œã™ã‚‹æ–‡å­—åˆ—
+* @return {string} è£œå®Œå¾Œã®æ–‡å­—åˆ—
 */
 function padding(str,num,pad){
     if(pad === void(0)) pad = 0;
@@ -14,11 +14,11 @@ function padding(str,num,pad){
 }
 /** 
 * suppress
-* •¶š—ñ‚Ìæ“ª‚É‘¶İ‚·‚éw’è‚Ì•¶š—ñ‚ğ
-* ‘¼‚Ì•¶š‚ª“oê‚·‚é‚Ü‚Åíœ‚·‚é
-* @param {string} str Œ³‚Ì•¶š—ñ
-* @param {string} pad íœ‚·‚é•¶š
-* @return {string} íœŒã‚Ì•¶š—ñ
+* æ–‡å­—åˆ—ã®å…ˆé ­ã«å­˜åœ¨ã™ã‚‹æŒ‡å®šã®æ–‡å­—åˆ—ã‚’
+* ä»–ã®æ–‡å­—ãŒç™»å ´ã™ã‚‹ã¾ã§å‰Šé™¤ã™ã‚‹
+* @param {string} str å…ƒã®æ–‡å­—åˆ—
+* @param {string} pad å‰Šé™¤ã™ã‚‹æ–‡å­—
+* @return {string} å‰Šé™¤å¾Œã®æ–‡å­—åˆ—
 */
 function suppress(str, sup) {
     return str.replace(new RegExp("^"+sup+"*"),"");
@@ -26,10 +26,10 @@ function suppress(str, sup) {
 
 /** 
 * repeat
-* w’è‚Ì•¶š—ñ‚ğŒJ‚è•Ô‚µ‚½V‚µ‚¢•¶š—ñ‚ğì¬‚·‚é
-* @param {string} str Œ³‚Ì•¶š—ñ
-* @param {number} num ‰ñ”
-* @return {string} ì¬‚³‚ê‚½•¶š—ñ
+* æŒ‡å®šã®æ–‡å­—åˆ—ã‚’ç¹°ã‚Šè¿”ã—ãŸæ–°ã—ã„æ–‡å­—åˆ—ã‚’ä½œæˆã™ã‚‹
+* @param {string} str å…ƒã®æ–‡å­—åˆ—
+* @param {number} num å›æ•°
+* @return {string} ä½œæˆã•ã‚ŒãŸæ–‡å­—åˆ—
 */
 function repeat(str,num){
     return Array(num+1).join(str);
@@ -37,9 +37,9 @@ function repeat(str,num){
 
 /** 
 * isHankaku
-* “ü—Í’l‚ª”¼Šp•¶š‚©‚ğƒ`ƒFƒbƒN‚·‚é
-* @param {string} value Œ³‚Ì•¶š—ñ
-* @return {boolean} ƒ`ƒFƒbƒNŒ‹‰Ê
+* å…¥åŠ›å€¤ãŒåŠè§’æ–‡å­—ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
+* @param {string} value å…ƒã®æ–‡å­—åˆ—
+* @return {boolean} ãƒã‚§ãƒƒã‚¯çµæœ
 */
 function isHankaku(value){
     return !value.match(/[^\x01-\x7E]/) 
@@ -48,9 +48,9 @@ function isHankaku(value){
 
 /** 
 * isHankaku
-* “ü—Í’l‚ª”¼ŠpƒJƒi•¶š‚©‚ğƒ`ƒFƒbƒN‚·‚é
-* @param {string} value Œ³‚Ì•¶š—ñ
-* @return {boolean} ƒ`ƒFƒbƒNŒ‹‰Ê
+* å…¥åŠ›å€¤ãŒåŠè§’ã‚«ãƒŠæ–‡å­—ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
+* @param {string} value å…ƒã®æ–‡å­—åˆ—
+* @return {boolean} ãƒã‚§ãƒƒã‚¯çµæœ
 */
 function isHankakuKana(value){
     return !value.match(/[^\uFF65-\uFF9F]/);

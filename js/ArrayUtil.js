@@ -1,13 +1,13 @@
 /** 
 * range
-* ”ÍˆÍ“à‚Ì®”’l‚ğ‚Á‚½”z—ñ‚ğì¬‚·‚é
-* @param {number} min ”ÍˆÍ‚ÌÅ¬’l
-* @param {number} max ”ÍˆÍ‚ÌÅ‘å’l
-* @param {function} filer ƒtƒBƒ‹ƒ^ŠÖ”
-* @return {array} ì¬‚µ‚½”z—ñ
+* ç¯„å›²å†…ã®æ•´æ•°å€¤ã‚’æŒã£ãŸé…åˆ—ã‚’ä½œæˆã™ã‚‹
+* @param {number} min ç¯„å›²ã®æœ€å°å€¤
+* @param {number} max ç¯„å›²ã®æœ€å¤§å€¤
+* @param {function} filer ãƒ•ã‚£ãƒ«ã‚¿é–¢æ•°
+* @return {array} ä½œæˆã—ãŸé…åˆ—
 */
 function range(min, max, filterFunc){
-    // ƒtƒBƒ‹ƒ^ŠÖ”‚ª—^‚¦‚ç‚ê‚Ä–³‚¯‚ê‚Îí‚Étrue‚ğ•Ô‚·ŠÖ”‚ğ’è‹`
+    // ãƒ•ã‚£ãƒ«ã‚¿é–¢æ•°ãŒä¸ãˆã‚‰ã‚Œã¦ç„¡ã‘ã‚Œã°å¸¸ã«trueã‚’è¿”ã™é–¢æ•°ã‚’å®šç¾©
     filterFunc = !!filterFunc ? filterFunc : e=>{return true};  
     return  [...Array(max+1).keys()]
               .filter(e=>{return e>=min})
@@ -16,21 +16,21 @@ function range(min, max, filterFunc){
 
 /** 
 * getRandValFromArray
-* ”z—ñ“à‚©‚çƒ‰ƒ“ƒ_ƒ€‚É’l‚ğæ“¾‚·‚é
-* @param {array} ary ”z—ñ
-* @return {object} ”z—ñ“à‚Ì’l
+* é…åˆ—å†…ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«å€¤ã‚’å–å¾—ã™ã‚‹
+* @param {array} ary é…åˆ—
+* @return {object} é…åˆ—å†…ã®å€¤
 */
 function getRandValFromArray(ary){
-    //‘ÎÛ‚Ì“Yš‚ğƒ‰ƒ“ƒ_ƒ€‚Éæ“¾
+    //å¯¾è±¡ã®æ·»å­—ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«å–å¾—
     return ary[Math.floor(Math.random() *  Object.keys(ary).length)];
 }
 
 /** 
 * popRandValFromArray
-* ”z—ñ“à‚©‚çƒ‰ƒ“ƒ_ƒ€‚É’l‚ğæ“¾‚·‚é
-* æ“¾‚µ‚½’l‚ÍŒ³‚Ì”z—ñ‚©‚çíœ‚³‚ê‚é
-* @param {array} i_ary ”z—ñ
-* @return {object} ”z—ñ“à‚Ì’l
+* é…åˆ—å†…ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«å€¤ã‚’å–å¾—ã™ã‚‹
+* å–å¾—ã—ãŸå€¤ã¯å…ƒã®é…åˆ—ã‹ã‚‰å‰Šé™¤ã•ã‚Œã‚‹
+* @param {array} i_ary é…åˆ—
+* @return {object} é…åˆ—å†…ã®å€¤
 */
 function popRandValFromArray(i_ary){
     const index = Math.floor(Math.random() *  Object.keys(ary).length);
@@ -41,11 +41,11 @@ function popRandValFromArray(i_ary){
 
 /** 
 * swapArrayVal
-* ”z—ñ‚Ìw’è‚Ì—v‘f2‚Â‚ğ“ü‚ê‘Ö‚¦‚é
-* @param {array} a Œ³‚Ì”z—ñ
-* @param {number} x —v‘fƒCƒ“ƒfƒbƒNƒX1
-* @param {number} y —v‘fƒCƒ“ƒfƒbƒNƒX2
-* @return {object} “ü‚ê‘Ö‚¦Œã‚Ì”z—ñ
+* é…åˆ—ã®æŒ‡å®šã®è¦ç´ 2ã¤ã‚’å…¥ã‚Œæ›¿ãˆã‚‹
+* @param {array} a å…ƒã®é…åˆ—
+* @param {number} x è¦ç´ ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹1
+* @param {number} y è¦ç´ ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹2
+* @return {object} å…¥ã‚Œæ›¿ãˆå¾Œã®é…åˆ—
 */
 function swapArrayVal(a,x,y){
     a[x]=[a[y],a[y]=a[x]][0];
@@ -54,9 +54,9 @@ function swapArrayVal(a,x,y){
 
 /** 
 * getObjectProperties
-* ˆø”‚ÌƒIƒuƒWƒFƒNƒg‚Ì—v‘f‚ğ—ñ‹“‚µ‚Ä”z—ñ‚Å•Ô‚·
+* å¼•æ•°ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è¦ç´ ã‚’åˆ—æŒ™ã—ã¦é…åˆ—ã§è¿”ã™
 * @param {object} a 
-* @return {array} ˆø”‚Ì‚ÌƒvƒƒpƒeƒB‚ğ—ñ‹“‚µ‚½”z—ñ
+* @return {array} å¼•æ•°ã®ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’åˆ—æŒ™ã—ãŸé…åˆ—
 */
 function getObjectProperties(a){
     let r = [];
