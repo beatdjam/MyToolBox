@@ -1,17 +1,15 @@
 /** 
 * range
 * 範囲内の整数値を持った配列を作成する
-* @param {number} min 範囲の最小値
 * @param {number} max 範囲の最大値
-* @param {function} filer フィルタ関数
+* @param {number} min 範囲の最小値(デフォルト値:0)
+* @param {function} filer フィルタ関数(デフォルト値:全てtrue)
 * @return {array} 作成した配列
 */
-function range(min, max, filterFunc){
-    // フィルタ関数が与えられて無ければ常にtrueを返す関数を定義
-    filterFunc = !!filterFunc ? filterFunc : e=>{return true};  
-    return  [...Array(max+1).keys()]
-              .filter(e=>{return e>=min})
-              .filter(filterFunc);
+function range(max,min = 0,filter =(e)=>{return true}){
+  return [...Array(max+1).keys()]
+			.filter(e=>{return e>=min})
+			.filter(filter);
 }
 
 /** 
