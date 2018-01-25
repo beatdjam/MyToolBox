@@ -6,10 +6,10 @@
 * @param {function} filer フィルタ関数(デフォルト値:全てtrue)
 * @return {array} 作成した配列
 */
-function range(max,min = 0,filter =(e)=>{return true}){
-  return [...Array(max+1).keys()]
-			.filter(e=>{return e>=min})
-			.filter(filter);
+function range(max,min = 0,filter=(e)=>{return true}){
+    return Array(max-min+1).fill()
+                           .map((v,i)=>{return min+i})
+                           .filter(filter);
 }
 
 /** 
