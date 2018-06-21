@@ -61,3 +61,13 @@ function getObjectProperties(a){
     Object.keys(a).forEach((v)=>{r.push(a[v])});
     return r;
   }
+
+/** 
+* transpose
+* 引数の二次元配列の行列を転置する
+* @param {array} a 
+* @return {array}
+*/
+function transpose(a){
+  return a[0].map(function (_, c) { return a.map(function (r) { return r[c]; }); });
+}
