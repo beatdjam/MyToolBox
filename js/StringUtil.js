@@ -55,3 +55,20 @@ function isHankaku(value){
 function isHankakuKana(value){
     return !value.match(/[^\uFF65-\uFF9F]/);
 }
+
+/** 
+* copyToClipboard
+* 与えられた文字列をクリップボードにコピーする
+* @param {string} s コピーする文字列
+* @return {boolean} コピー成否
+*/
+function copyToClipboard(s){
+    const d = document;
+    const t = d.createElement('pre');
+    t.textContent = s;
+    d.body.appendChild(t);
+    d.getSelection().selectAllChildren(t);
+    const execResult = d.execCommand('copy');
+    d.body.removeChild(t);
+    return execResult;
+}
