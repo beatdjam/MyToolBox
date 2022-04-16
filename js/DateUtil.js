@@ -27,3 +27,18 @@ function isDate(strDate){
 
     return true;
 }
+
+// 日曜を基準として月の何週目かを出す場合
+// ・土曜日が含まれる月を基準とする
+// ・日曜始まり
+function getWeekOfMonth(date) {
+    const lastDayOfWeek = 6; // SATURDAY
+    const temp = new Date(date);
+    // 与えられた週の末尾を取得
+    temp.setDate(temp.getDate() + lastDayOfWeek - temp.getDay());
+    return {
+        year: temp.getFullYear(),
+        month: temp.getMonth() + 1,
+        weekOfMonth:Math.ceil(temp.getDate()/ 7)
+    };
+}
